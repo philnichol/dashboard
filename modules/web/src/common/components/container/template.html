@@ -100,6 +100,19 @@ limitations under the License.
       </kd-property>
     </ng-container>
 
+    <ng-container *ngIf="container.status?.lastTerminationState">
+      <kd-property *ngIf="container.status.lastTerminationState.reason">
+        <div key
+            i18n>Last State Reason</div>
+        <div value>{{ container.status.lastTerminationState.reason }}</div>
+      </kd-property>
+      <kd-property *ngIf="container.status.lastTerminationState.exitCode">
+        <div key
+             i18n>Last State Exit Code</div>
+        <div value>{{ container.status.lastTerminationState.exitCode }}</div>
+      </kd-property>
+    </ng-container>
+
     <div *ngIf="container?.env?.length > 0"
          class="kd-muted section-header"
          fxFlex="100"
